@@ -36,7 +36,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".page3" />
         <activity android:name=".GeneralActivity"
-            android:screenOrientation="portrait"/>  <!--Screen orientation-->
+            android:screenOrientation="landscape"/>  <!--Screen orientation-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->

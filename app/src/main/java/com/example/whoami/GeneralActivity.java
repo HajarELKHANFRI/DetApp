@@ -12,7 +12,6 @@ import com.example.whoami.cnn.impl.CNNExtractorServiceImpl;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
 import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
@@ -37,7 +36,7 @@ public class GeneralActivity extends CameraActivity implements CameraBridgeViewB
     private static final String IMAGENET_CLASSES = "imagenet_classes.txt";
     private static final String MODEL_FILE = "pytorch_mobilenet.onnx";
 
-    private JavaCameraView mOpenCvCameraView;
+    private CameraBridgeViewBase mOpenCvCameraView;
     private Net opencvNet;
 
     private CNNExtractorService cnnService;
@@ -78,7 +77,7 @@ public class GeneralActivity extends CameraActivity implements CameraBridgeViewB
         // initialize implementation of CNNExtractorService
         this.cnnService = new CNNExtractorServiceImpl();
         // configure camera listener
-        mOpenCvCameraView = (JavaCameraView) findViewById(R.id.CameraView);
+        mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.CameraView);
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
     }
@@ -106,7 +105,7 @@ public class GeneralActivity extends CameraActivity implements CameraBridgeViewB
         String predictedClass = cnnService.getPredictedLabel(frame, opencvNet, classesPath);
 
         // place the predicted label on the image
-        Imgproc.putText(frame, predictedClass, new Point(100, 200), Imgproc.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255, 121, 0), 3);
+        Imgproc.putText(frame, predictedClass, new Point(200, 100), Imgproc.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255, 121, 0), 3);
 
         return frame;
     }
