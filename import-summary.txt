@@ -20,7 +20,6 @@ so manually move them:
 * javadoc\org\opencv\android\
 * javadoc\org\opencv\android\BaseLoaderCallback.html
 * javadoc\org\opencv\android\Camera2Renderer.html
-* javadoc\org\opencv\android\CameraActivity.html
 * javadoc\org\opencv\android\CameraBridgeViewBase.CvCameraViewFrame.html
 * javadoc\org\opencv\android\CameraBridgeViewBase.CvCameraViewListener.html
 * javadoc\org\opencv\android\CameraBridgeViewBase.CvCameraViewListener2.html
@@ -47,7 +46,6 @@ so manually move them:
 * javadoc\org\opencv\calib3d\StereoBM.html
 * javadoc\org\opencv\calib3d\StereoMatcher.html
 * javadoc\org\opencv\calib3d\StereoSGBM.html
-* javadoc\org\opencv\calib3d\UsacParams.html
 * javadoc\org\opencv\calib3d\package-frame.html
 * javadoc\org\opencv\calib3d\package-summary.html
 * javadoc\org\opencv\calib3d\package-tree.html
@@ -90,15 +88,10 @@ so manually move them:
 * javadoc\org\opencv\core\package-summary.html
 * javadoc\org\opencv\core\package-tree.html
 * javadoc\org\opencv\dnn\
-* javadoc\org\opencv\dnn\ClassificationModel.html
-* javadoc\org\opencv\dnn\DetectionModel.html
 * javadoc\org\opencv\dnn\DictValue.html
 * javadoc\org\opencv\dnn\Dnn.html
-* javadoc\org\opencv\dnn\KeypointsModel.html
 * javadoc\org\opencv\dnn\Layer.html
-* javadoc\org\opencv\dnn\Model.html
 * javadoc\org\opencv\dnn\Net.html
-* javadoc\org\opencv\dnn\SegmentationModel.html
 * javadoc\org\opencv\dnn\package-frame.html
 * javadoc\org\opencv\dnn\package-summary.html
 * javadoc\org\opencv\dnn\package-tree.html
@@ -145,6 +138,7 @@ so manually move them:
 * javadoc\org\opencv\imgproc\package-tree.html
 * javadoc\org\opencv\ml\
 * javadoc\org\opencv\ml\ANN_MLP.html
+* javadoc\org\opencv\ml\ANN_MLP_ANNEAL.html
 * javadoc\org\opencv\ml\Boost.html
 * javadoc\org\opencv\ml\DTrees.html
 * javadoc\org\opencv\ml\EM.html
@@ -203,13 +197,12 @@ so manually move them:
 * javadoc\org\opencv\video\BackgroundSubtractor.html
 * javadoc\org\opencv\video\BackgroundSubtractorKNN.html
 * javadoc\org\opencv\video\BackgroundSubtractorMOG2.html
-* javadoc\org\opencv\video\DISOpticalFlow.html
 * javadoc\org\opencv\video\DenseOpticalFlow.html
+* javadoc\org\opencv\video\DualTVL1OpticalFlow.html
 * javadoc\org\opencv\video\FarnebackOpticalFlow.html
 * javadoc\org\opencv\video\KalmanFilter.html
 * javadoc\org\opencv\video\SparseOpticalFlow.html
 * javadoc\org\opencv\video\SparsePyrLKOpticalFlow.html
-* javadoc\org\opencv\video\VariationalRefinement.html
 * javadoc\org\opencv\video\Video.html
 * javadoc\org\opencv\video\package-frame.html
 * javadoc\org\opencv\video\package-summary.html
@@ -225,7 +218,11 @@ so manually move them:
 * javadoc\overview-summary.html
 * javadoc\overview-tree.html
 * javadoc\package-list
-* javadoc\script.js
+* javadoc\resources\
+* javadoc\resources\background.gif
+* javadoc\resources\tab.gif
+* javadoc\resources\titlebar.gif
+* javadoc\resources\titlebar_end.gif
 * javadoc\serialized-form.html
 * javadoc\stylesheet.css
 
@@ -234,10 +231,11 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => OpenCVLib450\src\main\AndroidManifest.xml
-* res\ => OpenCVLib450\src\main\res\
-* src\ => OpenCVLib450\src\main\java\
-* src\org\opencv\engine\OpenCVEngineInterface.aidl => OpenCVLib450\src\main\aidl\org\opencv\engine\OpenCVEngineInterface.aidl
+* AndroidManifest.xml => openCVLibrary3412\src\main\AndroidManifest.xml
+* lint.xml => openCVLibrary3412\lint.xml
+* res\ => openCVLibrary3412\src\main\res\
+* src\ => openCVLibrary3412\src\main\java\
+* src\org\opencv\engine\OpenCVEngineInterface.aidl => openCVLibrary3412\src\main\aidl\org\opencv\engine\OpenCVEngineInterface.aidl
 
 Next Steps:
 -----------

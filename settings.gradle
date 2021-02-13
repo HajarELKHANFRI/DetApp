@@ -1,2 +1,3 @@
+include ':OpenCV450'
 include ':app'
 rootProject.name = "WHOAMI"

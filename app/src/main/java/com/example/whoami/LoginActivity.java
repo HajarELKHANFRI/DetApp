@@ -8,15 +8,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
-
-import java.util.EmptyStackException;
 
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText email,pass;
@@ -71,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                     String result = putData.getResult();
                                     if(result.equals("Login Success")){
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),amgDetector.class);
+                                        Intent intent = new Intent(getApplicationContext(), ChoicesActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }else {

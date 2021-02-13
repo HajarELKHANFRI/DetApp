@@ -1,4 +1,0 @@
-#Sat Feb 13 21:33:01 WEST 2021
-base.0=C\:\\Users\\isuma\\Documents\\GitHub\\DetApp\\OpenCVLib450\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

@@ -1,4 +1,0 @@
-#Fri Feb 12 18:42:29 WEST 2021
-base.0=C\:\\Users\\isuma\\Documents\\GitHub\\DetApp\\java\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
