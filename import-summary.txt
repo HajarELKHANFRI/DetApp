@@ -47,6 +47,7 @@ so manually move them:
 * javadoc\org\opencv\calib3d\StereoBM.html
 * javadoc\org\opencv\calib3d\StereoMatcher.html
 * javadoc\org\opencv\calib3d\StereoSGBM.html
+* javadoc\org\opencv\calib3d\UsacParams.html
 * javadoc\org\opencv\calib3d\package-frame.html
 * javadoc\org\opencv\calib3d\package-summary.html
 * javadoc\org\opencv\calib3d\package-tree.html
@@ -89,15 +90,21 @@ so manually move them:
 * javadoc\org\opencv\core\package-summary.html
 * javadoc\org\opencv\core\package-tree.html
 * javadoc\org\opencv\dnn\
+* javadoc\org\opencv\dnn\ClassificationModel.html
+* javadoc\org\opencv\dnn\DetectionModel.html
 * javadoc\org\opencv\dnn\DictValue.html
 * javadoc\org\opencv\dnn\Dnn.html
+* javadoc\org\opencv\dnn\KeypointsModel.html
 * javadoc\org\opencv\dnn\Layer.html
+* javadoc\org\opencv\dnn\Model.html
 * javadoc\org\opencv\dnn\Net.html
+* javadoc\org\opencv\dnn\SegmentationModel.html
 * javadoc\org\opencv\dnn\package-frame.html
 * javadoc\org\opencv\dnn\package-summary.html
 * javadoc\org\opencv\dnn\package-tree.html
 * javadoc\org\opencv\features2d\
 * javadoc\org\opencv\features2d\AKAZE.html
+* javadoc\org\opencv\features2d\AffineFeature.html
 * javadoc\org\opencv\features2d\AgastFeatureDetector.html
 * javadoc\org\opencv\features2d\BFMatcher.html
 * javadoc\org\opencv\features2d\BOWImgDescriptorExtractor.html
@@ -114,6 +121,7 @@ so manually move them:
 * javadoc\org\opencv\features2d\MSER.html
 * javadoc\org\opencv\features2d\ORB.html
 * javadoc\org\opencv\features2d\Params.html
+* javadoc\org\opencv\features2d\SIFT.html
 * javadoc\org\opencv\features2d\SimpleBlobDetector.html
 * javadoc\org\opencv\features2d\package-frame.html
 * javadoc\org\opencv\features2d\package-summary.html
@@ -226,10 +234,10 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => java\src\main\AndroidManifest.xml
-* res\ => java\src\main\res\
-* src\ => java\src\main\java\
-* src\org\opencv\engine\OpenCVEngineInterface.aidl => java\src\main\aidl\org\opencv\engine\OpenCVEngineInterface.aidl
+* AndroidManifest.xml => OpenCVLib450\src\main\AndroidManifest.xml
+* res\ => OpenCVLib450\src\main\res\
+* src\ => OpenCVLib450\src\main\java\
+* src\org\opencv\engine\OpenCVEngineInterface.aidl => OpenCVLib450\src\main\aidl\org\opencv\engine\OpenCVEngineInterface.aidl
 
 Next Steps:
 -----------

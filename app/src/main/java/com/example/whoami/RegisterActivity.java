@@ -119,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     data[0] = fullname;
                                     data[1] = email;
                                     data[2] = password;
-                                    PutData putData = new PutData("http://192.168.1.4/detapp/signup.php", "POST", field, data);
+                                    PutData putData = new PutData("http://192.168.100.4/detapp/signup.php", "POST", field, data);
                                     name = fullname;
                                     if (putData.startPut()) {
                                         if (putData.onComplete()) {
