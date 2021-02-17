@@ -31,7 +31,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity android:name=".ForgotPassword"/>
-        <activity android:name=".DisplayImage"/>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ChoicesActivity" />
         <activity android:name=".LoginActivity" />
