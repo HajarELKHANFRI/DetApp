@@ -16,8 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-150dp"
-        android:layout_marginLeft="-5dp"
-        android:src="@drawable/icon_detapp" />
+        android:layout_marginStart="-5dp"
+        android:src="@drawable/icon_detapp"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/logo"
