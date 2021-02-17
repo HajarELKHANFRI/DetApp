@@ -1,5 +1,6 @@
 package com.example.whoami;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -19,6 +20,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
+import android.util.Patterns;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -28,7 +30,13 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.io.File;
@@ -43,6 +51,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
+    FirebaseAuth fAuth;
     TextInputEditText inputFullname,inputEmail,inputPass,inputConfirmPass;
     Button signUp;
     TextView logIn;
@@ -50,18 +59,11 @@ public class RegisterActivity extends AppCompatActivity {
     String currentImagePath = null;
     String name = null;
     boolean finished = false;
+    FirebaseUser currentUser;
     private static final int IMAGE_REQUEST = 1;
     public static final int CAMERA_PERM_CODE = 101;
     public static final int GALLERY_REQUEST_CODE = 105;
-    public boolean emailValidator(String email)
-    {
-        Pattern pattern;
-        Matcher matcher;
-        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        pattern = Pattern.compile(EMAIL_PATTERN);
-        matcher = pattern.matcher(email);
-        return matcher.matches();
-    }
+
 
     AwesomeValidation awesomeValidation;
     @Override
@@ -76,6 +78,8 @@ public class RegisterActivity extends AppCompatActivity {
         signUp = findViewById(R.id.buttonSignUp);
         logIn = findViewById(R.id.loginText);
         progress = findViewById(R.id.progress);
+
+        fAuth = FirebaseAuth.getInstance();
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.COLORATION);
 
@@ -95,63 +99,76 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String fullname,email,password,confirmPassword;
-                fullname = String.valueOf(inputFullname.getText());
-                email = String.valueOf(inputEmail.getText());
-                password = String.valueOf(inputPass.getText());
-                confirmPassword = String.valueOf(inputConfirmPass);
+                fullname = inputFullname.getText().toString().trim();
+                email = inputEmail.getText().toString().trim();
+                password = inputPass.getText().toString().trim();
+                confirmPassword = inputConfirmPass.getText().toString().trim();
 
+                if(fullname.isEmpty()){
+                    inputFullname.setError("Fullname is required!");
+                    inputFullname.requestFocus();
+                    return;
+                }
 
-                if(!fullname.equals("") && !email.equals("") && !password.equals("") && !confirmPassword.equals("")) {
-                    if (emailValidator(email)){
-                        Toast.makeText(getApplicationContext(), "Valid Email Address.", Toast.LENGTH_SHORT).show();
-                        if(awesomeValidation.validate()){
-                            progress.setVisibility(View.VISIBLE);
-                            Handler handler = new Handler(Looper.getMainLooper());
-                            handler.post(new Runnable() {
+                if(email.isEmpty()){
+                    inputEmail.setError("Email is required!");
+                    inputEmail.requestFocus();
+                    return;
+                }
+
+                if(password.isEmpty()){
+                    inputPass.setError("Password is required!");
+                    inputPass.requestFocus();
+                    return;
+                }
+
+                if(confirmPassword.isEmpty()){
+                    inputConfirmPass.setError("Confirm Password is required!");
+                    inputConfirmPass.requestFocus();
+                    return;
+                }
+
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    inputEmail.setError("Invalid Email Address!");
+                    inputEmail.requestFocus();
+                    return;
+                }
+
+                if(!awesomeValidation.validate()){
+                    inputConfirmPass.setError("Passwords don't match!!");
+                    inputConfirmPass.requestFocus();
+                    return;
+                }
+
+                progress.setVisibility(View.VISIBLE);
+                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            User user = new User(fullname,email);
+                            FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
-                                public void run() {
-                                    String[] field = new String[3];
-                                    field[0] = "fullname";
-                                    field[1] = "email";
-                                    field[2] = "password";
-                                    //Creating array for data
-                                    String[] data = new String[3];
-                                    data[0] = fullname;
-                                    data[1] = email;
-                                    data[2] = password;
-                                    PutData putData = new PutData("http://192.168.1.4/detapp/signup.php", "POST", field, data);
-                                    name = fullname;
-                                    if (putData.startPut()) {
-                                        if (putData.onComplete()) {
-                                            progress.setVisibility(View.GONE);
-                                            String result = putData.getResult();
-                                            if(result.equals("Sign Up Success")){
-                                                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                                //add photo
-                                                boolean var = showAlert(v);
-
-
-                                            }else {
-                                                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                            }
-
-                                        }
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        currentUser =FirebaseAuth.getInstance().getCurrentUser();
+                                        Toast.makeText(getApplicationContext(),"You've been successfully registered!",Toast.LENGTH_SHORT).show();
+                                        progress.setVisibility(View.GONE);
+                                        //add photo
+                                        showAlert(v);
                                     }
-
+                                    else{
+                                        Toast.makeText(getApplicationContext(),"Failed to be registered! Try again.",Toast.LENGTH_SHORT).show();
+                                        progress.setVisibility(View.GONE);
+                                    }
                                 }
                             });
                         }else{
-                            Toast.makeText(getApplicationContext(), "Passwords don't match!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Failed to be registered!",Toast.LENGTH_SHORT).show();
+                            progress.setVisibility(View.GONE);
                         }
-
                     }
-                    else{
-                        Toast.makeText(getApplicationContext(), "Invalid Email Address!!", Toast.LENGTH_SHORT).show();
-                    }
+                });
 
-                }else {
-                    Toast.makeText(getApplicationContext(),"All Fields are required!",Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
@@ -221,7 +238,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private File getImageFile(){
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageName = name+"_"+timeStamp+"_";
+        String imageName = currentUser.getUid();
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
         File imageFile = null;
@@ -242,7 +259,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Bitmap bitmap = null;
                 Uri imageUri = data.getData();
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                String imageName = name+"_"+timeStamp+".";
+                String imageName = currentUser.getUid()+".";
                 File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),imageUri);

@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WHOAMI"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DisplayImage"></activity>
+        <activity android:name=".ForgotPassword"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".amgDetector" />
         <activity android:name=".LoginActivity" />

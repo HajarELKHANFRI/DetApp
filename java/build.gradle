@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -6,6 +7,7 @@ android {
 
     defaultConfig {
         applicationId "org.opencv"
+        minSdkVersion 14
     }
 
     buildTypes {
@@ -14,4 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-database:19.6.0'
 }
