@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508749961755",
+    "project_id": "detapp-6e5e6",
+    "storage_bucket": "detapp-6e5e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508749961755:android:03b131e0cebfb2eddc76be",
+        "android_client_info": {
+          "package_name": "com.example.whoami"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508749961755-k7531luq6fa6hp3sn3hc75s6bcred07t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgsKPd60xv1btkr4J0o69Q--LWBe1CdU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508749961755-k7531luq6fa6hp3sn3hc75s6bcred07t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\isuma\Documents\GitHub\DetApp\OpenCV450\java\AndroidManifest.xml
+8-->C:\Users\HP\AndroidStudioProjects\WHOAMI\OpenCV450\java\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\isuma\Documents\GitHub\DetApp\OpenCV450\java\AndroidManifest.xml
+9-->C:\Users\HP\AndroidStudioProjects\WHOAMI\OpenCV450\java\AndroidManifest.xml
 10
 11</manifest>

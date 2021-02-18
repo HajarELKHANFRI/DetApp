@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             progress.setVisibility(View.GONE);
                             Toast.makeText(getApplicationContext(),"Logged In!",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(),amgDetector.class);
+                            Intent intent = new Intent(getApplicationContext(),ChoicesActivity.class);
                             startActivity(intent);
                             finish();
                         }else{
