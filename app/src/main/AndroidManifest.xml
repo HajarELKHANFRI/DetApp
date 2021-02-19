@@ -37,6 +37,13 @@
         <activity android:name=".page3" />
         <activity android:name=".GeneralActivity"
             android:screenOrientation="landscape"/>  <!--Screen orientation-->
+        <activity
+            android:name=".facedetect.FaceDetectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".facedetect.PhotoViewerActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,6 +65,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="face" />
     </application>
 
 </manifest>
