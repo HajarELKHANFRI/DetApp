@@ -35,10 +35,12 @@
         <activity android:name=".ChoicesActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".page3" />
-        <activity android:name=".GeneralActivity"
-            android:screenOrientation="landscape"/>  <!--Screen orientation-->
         <activity
             android:name=".facedetect.FaceDetectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".objectdetect.ObjectDetectActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity

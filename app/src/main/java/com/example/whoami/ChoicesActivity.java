@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.whoami.facedetect.FaceDetectActivity;
+import com.example.whoami.objectdetect.ObjectDetectActivity;
 
 public class ChoicesActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class ChoicesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 Intent intentMain = new Intent(ChoicesActivity.this ,
-                        GeneralActivity.class);
+                        ObjectDetectActivity.class);
                 ChoicesActivity.this.startActivity(intentMain);
                 Log.i("Content "," General layout ");
             }

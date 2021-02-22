@@ -28,9 +28,8 @@
         android:id="@+id/option1"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_weight="1"
-        android:text="@string/option1"
+        android:layout_marginTop="100dp"
+        android:text="@string/option2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title1" />
@@ -39,19 +38,10 @@
         android:id="@+id/option2"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/option2"
+        android:layout_marginBottom="150dp"
+        android:text="@string/option3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option1" />
-
-    <Button
-        android:id="@+id/option3"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/option3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
