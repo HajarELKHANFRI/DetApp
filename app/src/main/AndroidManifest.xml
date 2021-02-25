@@ -34,7 +34,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ChoicesActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".page3" />
         <activity
             android:name=".facedetect.FaceDetectActivity"
             android:screenOrientation="portrait">
