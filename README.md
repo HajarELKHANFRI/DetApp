@@ -10,7 +10,7 @@ How to execute Det.App in your machine (EASY) :
 1- Download Android Studio from here : [Android Studio](https://developer.android.com/studio)
 
 2 - Open Android Studio, then click on Start a new Android Studio project :
-![tuto](https://github.com/HajarELKHANFRI/DetApp/tree/master/pics())
+![tuto](https://github.com/HajarELKHANFRI/DetApp/tree/master/pics/tuto1.png)
 
 3 - Click on VCS then Get from Version Control... then paste this link https://github.com/HajarELKHANFRI/DetApp.git as you see in the image below :
 
