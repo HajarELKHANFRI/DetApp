@@ -4,7 +4,9 @@
 Det.App is a machine learning android application where authentificated users can detect objects and their or their friends' mood.
 
 We used Firebase for back-end. And for machine learning, we used firebase mlkit vision.
+
 You can find our java files [here](https://github.com/HajarELKHANFRI/DetApp/raw/master/app/src/main/java/com/example/whoami).
+
 How to run the app : 
 
 * You can run the app either by installing it from the provided [apk](https://github.com/HajarELKHANFRI/DetApp/releases)
