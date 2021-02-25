@@ -282,7 +282,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
         Toast.makeText(getApplicationContext(), "Your Picture is Saved!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+        Intent intent = new Intent(getApplicationContext(),ChoicesActivity.class);
         startActivity(intent);
         finish();
 
