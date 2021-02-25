@@ -27,10 +27,10 @@ How to run the app :
     6. Now if you are running on your phone you'll have to turn on [USB Debugging](https://developer.android.com/studio/debug/dev-options)
 
     7. After that you connect your phone to your laptop and click on Run.
-    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto4.png' height=150 width=650>
+    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto4.png' height=100 width=650>
 
 ## Some tests
-![test1](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test1.png)
-![test2](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test2.png)
-![test3](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test3.png)
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test1.png' height=1920 width=1080>
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test2.png' height=1920 width=1080>
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test3.png' height=1920 width=1080>
 
