@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublicMethods {
+public class PublicMethods { //android permession request
     private static final int PERMISSION_REQUESTS = 1;
 
     private static String[] getRequiredPermissions(Activity mActivity) {

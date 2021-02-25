@@ -208,7 +208,6 @@ public class RegisterActivity extends AppCompatActivity {
         dialogBtn_import_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                    Toast.makeText(getApplicationContext(),"Okay" ,Toast.LENGTH_SHORT).show(); khass nch3l cam wnkhd pic
                 //displayImage(v);
                 Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(gallery, GALLERY_REQUEST_CODE);

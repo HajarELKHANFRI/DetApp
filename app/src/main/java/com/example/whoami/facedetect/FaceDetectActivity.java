@@ -73,10 +73,10 @@ public final class FaceDetectActivity extends BaseActivity
 
     private void createCameraSource() {
         if (cameraSource == null) {
-            cameraSource = new CameraSource(this, graphicOverlay);
+            cameraSource = new CameraSource(this, graphicOverlay); //create a camerasource that receives preview frames from the camera
         }
         try {
-            FaceDetectionProcessor processor = new FaceDetectionProcessor(getResources());
+            FaceDetectionProcessor processor = new FaceDetectionProcessor(getResources()); //used for face detection
             processor.frameHandler = this;
             processor.faceDetectStatus = this;
             cameraSource.setMachineLearningFrameProcessor(processor);
@@ -94,7 +94,7 @@ public final class FaceDetectActivity extends BaseActivity
     private void startCameraSource() {
         if (cameraSource != null) {
             try {
-                preview.start(cameraSource, graphicOverlay);
+                preview.start(cameraSource, graphicOverlay); //start getting camera feed
             } catch (IOException e) {
                 Log.e(TAG, "Unable to start camera source.", e);
                 cameraSource.release();
@@ -124,7 +124,7 @@ public final class FaceDetectActivity extends BaseActivity
     }
 
     @Override
-    public void onRequestPermissionsResult(
+    public void onRequestPermissionsResult( //get permession from device
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (PublicMethods.allPermissionsGranted(this)) {
             createCameraSource();
@@ -136,7 +136,7 @@ public final class FaceDetectActivity extends BaseActivity
     @Override
     public void onFrame(Bitmap image, FirebaseVisionFace face, FrameMetadata frameMetadata, GraphicOverlay graphicOverlay) {
         originalImage = image;
-        if (face.getLeftEyeOpenProbability() < 0.2) {
+        if (face.getLeftEyeOpenProbability() < 0.2) { //checks if eyes are open
             findViewById(R.id.rightEyeStatus).setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.rightEyeStatus).setVisibility(View.INVISIBLE);
@@ -149,7 +149,7 @@ public final class FaceDetectActivity extends BaseActivity
 
         int smile = 0;
 
-        if (face.getSmilingProbability() > .8) {
+        if (face.getSmilingProbability() > .8) { //check the probability of a smile so we can detect mood
             smile = BaseRating.GREAT ;
         } else if (face.getSmilingProbability() <= .8 && face.getSmilingProbability() > .6) {
             smile = BaseRating.GOOD ;
@@ -163,7 +163,7 @@ public final class FaceDetectActivity extends BaseActivity
     }
 
     @Override
-    public void onFaceLocated(RectModel rectModel) {
+    public void onFaceLocated(RectModel rectModel) { //draw contouring rectangle when it detects the face
         faceFrame.setColorFilter(ContextCompat.getColor(this, R.color.green));
         takePhoto.setEnabled(true);
 
@@ -181,7 +181,7 @@ public final class FaceDetectActivity extends BaseActivity
         test.setImageBitmap(originalImage);
     }
 
-    private void takePhoto() {
+    private void takePhoto() { //used to take the picture
         if (croppedImage != null) {
             String path = PublicMethods.saveToInternalStorage(originalImage, Cons.IMG_FILE, mActivity);
             startActivity(new Intent(mActivity, PhotoViewerActivity.class)

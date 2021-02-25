@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 public class BitmapUtils {
 
     @Nullable
-    public static Bitmap getBitmap(ByteBuffer data, com.example.whoami.facedetect.utils.common.FrameMetadata metadata) {
+    public static Bitmap getBitmap(ByteBuffer data, FrameMetadata metadata) {
         data.rewind();
         byte[] imageInBuffer = new byte[data.limit()];
         data.get(imageInBuffer, 0, imageInBuffer.length);
