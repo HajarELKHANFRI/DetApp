@@ -30,7 +30,7 @@ How to run the app :
     <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto4.png' height=100 width=650>
 
 ## Some tests
-<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test1.png' height=1920 width=1080>
-<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test2.png' height=1920 width=1080>
-<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test3.png' height=1920 width=1080>
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test1.png' height=1280 width=640>
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test2.png' height=1280 width=640>
+<img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test3.png' height=1280 width=640>
 
