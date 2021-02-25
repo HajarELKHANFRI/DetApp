@@ -1,5 +1,5 @@
 # DetApp
-ReadMe.md
+
 
 Det.App is a machine learning android application where authentificated users can detect objects, their mood, their age and their gender.
 
