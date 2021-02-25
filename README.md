@@ -14,7 +14,7 @@ How to run the app :
     1. Download Android Studio from here : [Android Studio](https://developer.android.com/studio)
 
     2. Open Android Studio, then click on Get from version control:
-    ![tuto1](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto1.png)
+    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto1.png' height=100 width=100)
 
     3. Then paste the repository [link](https://github.com/HajarELKHANFRI/DetApp) as you see in the image below :
     ![tuto2](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto2.png)
