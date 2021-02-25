@@ -14,18 +14,20 @@ How to run the app :
     1. Download Android Studio from here : [Android Studio](https://developer.android.com/studio)
 
     2. Open Android Studio, then click on Get from version control:
-    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto1.png' height=480 width=360>
+    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto1.png' height=400 width=400>
 
     3. Then paste the repository [link](https://github.com/HajarELKHANFRI/DetApp) as you see in the image below :
-     <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto2.png' height=360 width=480>
+     <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto2.png' height=400 width=500>
 
     4. Click on Clone.
     
     5. Click on Build -> Rebuild Project 
+    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto3.png' height=960 width=430>
 
     6. Now if you are running on your phone you'll have to turn on [USB Debugging](https://developer.android.com/studio/debug/dev-options)
 
     7. After that you connect your phone to your laptop and click on Run.
+    <img src='https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/tuto4.png' height=150 width=650>
 
 ## Some tests
 ![test1](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/test1.png)
