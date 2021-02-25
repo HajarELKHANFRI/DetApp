@@ -1,7 +1,7 @@
 # DetApp
 ![Det.App](https://github.com/HajarELKHANFRI/DetApp/raw/master/pics/ic_launcher_round.png)
 
-Det.App is a machine learning android application where authentificated users can detect objects, their mood, their age and their gender.
+Det.App is a machine learning android application where authentificated users can detect objects and their or their friends' mood.
 
 We used Firebase for back-end. And for machine learning, we used firebase mlkit vision.
 
